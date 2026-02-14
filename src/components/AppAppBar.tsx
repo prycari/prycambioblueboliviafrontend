@@ -9,6 +9,7 @@ import { styled, alpha } from '@mui/material/styles';
 
 import { SitemarkIcon } from './SitemarkIcon';
 import ColorModeIconDropdown from '.././theme/ColorModeIconDropdown';
+import { Link } from 'react-router-dom';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     flexShrink: 0,
@@ -49,14 +50,27 @@ export function AppAppBar() {
                                 <SitemarkIcon />
                             </Typography>
                         </Tooltip>
-                        <Box>
+                        <Box className="flex items-center gap-3">
                             <Typography
                                 color='textPrimary'
                                 variant='subtitle2'
+                                component={Link}
+                                to="/"
                                 className='flex items-center font-semibold hover:cursor-pointer'
                             >
                                 CambioBlueBolivia
                             </Typography>
+
+                            <Typography
+                                color='textPrimary'
+                                variant='subtitle2'
+                                component={Link}
+                                to="/sucursales"
+                                className='flex items-center font-semibold hover:cursor-pointer'
+                            >
+                                Sucursales
+                            </Typography>
+
                         </Box>
                     </Box>
                     <Box className="items-center gap-1"

@@ -6,6 +6,8 @@ import { AppAppBar } from './components/AppAppBar';
 
 import { Calculator } from './components/calculator/Calculator';
 import { StoreProvider } from './components/StoreProvider';
+import { Route, Routes } from 'react-router-dom';
+import { Map } from './components/map/Map';
 
 export default function App(props: { disableCustomTheme?: boolean }) {
   return (
@@ -13,7 +15,12 @@ export default function App(props: { disableCustomTheme?: boolean }) {
       <StoreProvider>
         <CssBaseline enableColorScheme />
         <AppAppBar />
-        <Calculator />
+
+        <Routes>
+          <Route path="/" element={<Calculator />} />
+          <Route path="/sucursales" element={<Map />} />
+        </Routes>
+
         <Footer />
       </StoreProvider>
     </AppTheme>
